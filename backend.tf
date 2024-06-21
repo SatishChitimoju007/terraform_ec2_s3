@@ -1,8 +1,9 @@
-terraform {
-  backend "s3" {
-    bucket = "sc-s3terraformstatefile"
-    key = "main"
-    region = "us-east-1"
-    dynamodb_table = "sc-terraformlock-table"
+resource "aws_s3_bucket" "scbuckettfstatefile"{
+  bucket = "s3statebucketsc"
+  versioning{
+    enabled = true
   }
-}
+ }
+
+
+
